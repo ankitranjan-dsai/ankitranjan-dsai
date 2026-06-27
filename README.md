@@ -140,10 +140,6 @@ class AnkitRanjan:
 
 <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=ankitranjan-dsai&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Activity graph" />
 
-<br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=ankitranjan-dsai&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7&margin-w=8" alt="Trophies" />
-
 </div>
 
 ---
