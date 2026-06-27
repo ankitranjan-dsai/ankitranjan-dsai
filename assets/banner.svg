@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#161b2e"/>
+      <stop offset="100%" stop-color="#241a3e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="50%" stop-color="#a371f7"/>
+      <stop offset="100%" stop-color="#7ee787"/>
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a371f7" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7ee787" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a371f7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a371f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="320" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="18" fill="url(#grid)"/>
+  <circle cx="980" cy="150" r="220" fill="url(#glow)"/>
+
+  <!-- right-side multi-agent / neural motif -->
+  <g stroke="url(#accent)" stroke-width="1.6" opacity="0.55">
+    <line x1="940" y1="92" x2="1050" y2="150"/>
+    <line x1="940" y1="92" x2="1010" y2="62"/>
+    <line x1="1050" y1="150" x2="1010" y2="62"/>
+    <line x1="1050" y1="150" x2="965" y2="232"/>
+    <line x1="1050" y1="150" x2="1120" y2="200"/>
+    <line x1="965" y1="232" x2="1120" y2="200"/>
+    <line x1="1010" y1="62" x2="1120" y2="108"/>
+    <line x1="1050" y1="150" x2="1120" y2="108"/>
+  </g>
+  <g fill="#0d1117" stroke="url(#accent)" stroke-width="2.4">
+    <circle cx="1050" cy="150" r="13">
+      <animate attributeName="r" values="13;16;13" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="940" cy="92" r="9">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1010" cy="62" r="9">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="965" cy="232" r="9">
+      <animate attributeName="opacity" values="1;0.4;1" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1120" cy="200" r="9">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1120" cy="108" r="9">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- left text block -->
+  <text x="64" y="92" fill="#7ee787" font-size="15" font-weight="700" letter-spacing="6">DATA SCIENCE · MACHINE LEARNING · APPLIED AI</text>
+
+  <text x="62" y="168" fill="#f0f6fc" font-size="68" font-weight="800" letter-spacing="1">ANKIT RANJAN</text>
+
+  <!-- animated underline -->
+  <rect x="64" y="186" width="360" height="5" rx="2.5" fill="url(#accent)"/>
+  <rect x="64" y="186" width="120" height="5" rx="2.5" fill="url(#shimmer)">
+    <animate attributeName="x" values="64;324;64" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="64" y="232" fill="#58a6ff" font-size="25" font-weight="600">MSc Data Science &amp; AI  ·  Aspiring AI / ML Engineer</text>
+  <text x="64" y="266" fill="#8b949e" font-size="17" font-weight="400">Multi-Agent AI Systems · NLP · Statistical Modelling · Turning data into decisions</text>
+
+  <!-- location chip -->
+  <g>
+    <rect x="64" y="284" width="172" height="26" rx="13" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <circle cx="82" cy="297" r="4" fill="#7ee787"/>
+    <text x="94" y="301" fill="#c9d1d9" font-size="13" font-weight="500">Liverpool, United Kingdom</text>
+  </g>
+</svg>
