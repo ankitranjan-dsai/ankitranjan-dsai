@@ -151,8 +151,7 @@ class AnkitRanjan:
 
 <br/><br/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=ankitranjan-dsai&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ankitranjan-dsai&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
+<img width="62%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/languages.svg" alt="Most used languages" />
 
 <br/>
 
