@@ -1,0 +1,85 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b2e"/>
+    </linearGradient>
+    <linearGradient id="t1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#58a6ff"/><stop offset="100%" stop-color="#a371f7"/></linearGradient>
+    <linearGradient id="t2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a371f7"/><stop offset="100%" stop-color="#bc8cff"/></linearGradient>
+    <linearGradient id="t3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7ee787"/><stop offset="100%" stop-color="#58a6ff"/></linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" rx="18" fill="url(#pbg)"/>
+
+  <!-- ============ CARD 1 — SGAI (blue) ============ -->
+  <g>
+    <rect x="24" y="24" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="24" y="24" width="6" height="168" rx="3" fill="#58a6ff"/>
+    <circle cx="56" cy="55" r="4" fill="#58a6ff"/>
+    <text x="68" y="60" fill="#58a6ff" font-size="12" font-weight="700" letter-spacing="2">AI AGENTS · SECURITY</text>
+    <text x="52" y="96" fill="#f0f6fc" font-size="23" font-weight="800">SGAI — SecureGuardAI</text>
+    <text x="52" y="124" fill="#8b949e" font-size="14">Multi-agent reviewer that audits a codebase for CVEs &amp; unsafe</text>
+    <text x="52" y="144" fill="#8b949e" font-size="14">patterns, risk-ranks findings, and proposes fixes.</text>
+    <text x="52" y="176" fill="#c9d1d9" font-size="13" font-weight="600">Google ADK · MCP · Bandit · OSV.dev</text>
+  </g>
+
+  <!-- ============ CARD 2 — Facility Trust Desk (purple) ============ -->
+  <g>
+    <rect x="612" y="24" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="612" y="24" width="6" height="168" rx="3" fill="#a371f7"/>
+    <circle cx="644" cy="55" r="4" fill="#a371f7"/>
+    <text x="656" y="60" fill="#a371f7" font-size="12" font-weight="700" letter-spacing="2">RAG / LLM · HEALTHCARE</text>
+    <text x="640" y="96" fill="#f0f6fc" font-size="23" font-weight="800">Facility Trust Desk</text>
+    <text x="640" y="124" fill="#8b949e" font-size="14">Retrieve-then-judge pipeline turning messy health-facility</text>
+    <text x="640" y="144" fill="#8b949e" font-size="14">records into cited, trustworthy capability verdicts.</text>
+    <text x="640" y="176" fill="#c9d1d9" font-size="13" font-weight="600">RAG · LLM · Streamlit · Databricks '26</text>
+  </g>
+
+  <!-- ============ CARD 3 — BatchHelm AI (green) ============ -->
+  <g>
+    <rect x="24" y="216" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="24" y="216" width="6" height="168" rx="3" fill="#7ee787"/>
+    <circle cx="56" cy="247" r="4" fill="#7ee787"/>
+    <text x="68" y="252" fill="#7ee787" font-size="12" font-weight="700" letter-spacing="2">MULTI-AGENT · AUTOMATION</text>
+    <text x="52" y="288" fill="#f0f6fc" font-size="23" font-weight="800">BatchHelm AI</text>
+    <text x="52" y="316" fill="#8b949e" font-size="14">Autonomous recall command center coordinating product</text>
+    <text x="52" y="336" fill="#8b949e" font-size="14">batches, shelves, and store teams in real time.</text>
+    <text x="52" y="368" fill="#c9d1d9" font-size="13" font-weight="600">Multi-agent · Python · Automation</text>
+  </g>
+
+  <!-- ============ CARD 4 — Temporal Path Explorer (blue) ============ -->
+  <g>
+    <rect x="612" y="216" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="612" y="216" width="6" height="168" rx="3" fill="#58a6ff"/>
+    <circle cx="644" cy="247" r="4" fill="#58a6ff"/>
+    <text x="656" y="252" fill="#58a6ff" font-size="12" font-weight="700" letter-spacing="2">GRAPHS · MSc PROJECT</text>
+    <text x="640" y="288" fill="#f0f6fc" font-size="23" font-weight="800">Temporal Path Explorer</text>
+    <text x="640" y="316" fill="#8b949e" font-size="14">Streamlit app for exploring temporal paths in</text>
+    <text x="640" y="336" fill="#8b949e" font-size="14">time-evolving networks. (Team 9, UoL)</text>
+    <text x="640" y="368" fill="#c9d1d9" font-size="13" font-weight="600">Streamlit · NetworkX · Visualisation</text>
+  </g>
+
+  <!-- ============ CARD 5 — Delivery Time Prediction (purple) ============ -->
+  <g>
+    <rect x="24" y="408" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="24" y="408" width="6" height="168" rx="3" fill="#a371f7"/>
+    <circle cx="56" cy="439" r="4" fill="#a371f7"/>
+    <text x="68" y="444" fill="#a371f7" font-size="12" font-weight="700" letter-spacing="2">MACHINE LEARNING</text>
+    <text x="52" y="480" fill="#f0f6fc" font-size="23" font-weight="800">Delivery Time Prediction</text>
+    <text x="52" y="508" fill="#8b949e" font-size="14">End-to-end supervised ML pipeline on Porter data —</text>
+    <text x="52" y="528" fill="#8b949e" font-size="14">R² = 0.8636 with RFE feature selection.</text>
+    <text x="52" y="560" fill="#c9d1d9" font-size="13" font-weight="600">scikit-learn · Statsmodels · Jupyter</text>
+  </g>
+
+  <!-- ============ CARD 6 — NYC Taxi EDA (green) ============ -->
+  <g>
+    <rect x="612" y="408" width="564" height="168" rx="12" fill="#161b29" stroke="#30363d"/>
+    <rect x="612" y="408" width="6" height="168" rx="3" fill="#7ee787"/>
+    <circle cx="644" cy="439" r="4" fill="#7ee787"/>
+    <text x="656" y="444" fill="#7ee787" font-size="12" font-weight="700" letter-spacing="2">DATA ANALYTICS · EDA</text>
+    <text x="640" y="480" fill="#f0f6fc" font-size="23" font-weight="800">NYC Taxi EDA</text>
+    <text x="640" y="508" fill="#8b949e" font-size="14">Cleaned &amp; analysed millions of 2023 trip records with</text>
+    <text x="640" y="528" fill="#8b949e" font-size="14">geospatial zone insights for dispatch optimisation.</text>
+    <text x="640" y="560" fill="#c9d1d9" font-size="13" font-weight="600">Pandas · Seaborn · GeoPandas</text>
+  </g>
+</svg>

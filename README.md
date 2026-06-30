@@ -118,18 +118,8 @@ class AnkitRanjan:
 
 <div align="center">
 
-<a href="https://github.com/ankitranjan-dsai/SGAI">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=ankitranjan-dsai&repo=SGAI&theme=tokyonight&hide_border=true" alt="SGAI" />
-</a>
-<a href="https://github.com/ankitranjan-dsai/facility-trust-desk">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=ankitranjan-dsai&repo=facility-trust-desk&theme=tokyonight&hide_border=true" alt="Facility Trust Desk" />
-</a>
-
-<a href="https://github.com/ankitranjan-dsai/batchhelm-ai">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=ankitranjan-dsai&repo=batchhelm-ai&theme=tokyonight&hide_border=true" alt="BatchHelm AI" />
-</a>
-<a href="https://github.com/ankitranjan-dsai/temporal-path-explorer">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=ankitranjan-dsai&repo=temporal-path-explorer&theme=tokyonight&hide_border=true" alt="Temporal Path Explorer" />
+<a href="https://github.com/ankitranjan-dsai?tab=repositories">
+  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/projects.svg" alt="Featured projects" />
 </a>
 
 </div>
