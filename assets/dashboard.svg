@@ -61,7 +61,7 @@
   <g>
     <rect x="421" y="244" width="357" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
     <rect x="421" y="244" width="6" height="120" rx="3" fill="#58a6ff"/>
-    <text x="451" y="304" fill="url(#val)" font-size="42" font-weight="800">6+ Builds</text>
+    <text x="451" y="304" fill="url(#val)" font-size="42" font-weight="800">7+ Builds</text>
     <text x="451" y="332" fill="#c9d1d9" font-size="15" font-weight="600">Shipped Projects</text>
     <text x="451" y="352" fill="#8b949e" font-size="13">AI agents · ML · RAG · Analytics</text>
   </g>

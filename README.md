@@ -126,9 +126,10 @@ class AnkitRanjan:
 
 | Project | What it does | Stack |
 |---|---|---|
-| 🔐 **[SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)** | Multi-agent reviewer that audits a codebase for CVEs & unsafe patterns, risk-ranks findings, explains fixes, and remembers what changed since the last scan. | Google ADK · MCP · Bandit · OSV.dev |
-| 🏥 **[Facility Trust Desk](https://github.com/ankitranjan-dsai/facility-trust-desk)** | Retrieve-then-judge AI pipeline turning messy health-facility records into **cited, trustworthy** capability verdicts. *(Databricks Hackathon 2026)* | RAG · LLM · Streamlit |
-| 📦 **[BatchHelm AI](https://github.com/ankitranjan-dsai/batchhelm-ai)** | Autonomous recall command center coordinating product batches, shelves, and store teams. | Multi-agent · Python |
+| 🔐 **[SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)** | Multi-agent reviewer that audits a codebase for CVEs & unsafe patterns, risk-ranks findings, explains fixes, and remembers what changed since the last scan. **🏆 Kaggle × Google AI Hackathon 2026** | Google ADK · MCP · Bandit · OSV.dev |
+| 🎓 **Aimura AI** *(code on request)* | Student career-planning OS — turns one guided intake into a grounded study-to-career plan with a readiness score, career-fit intelligence, and an AI mentor chat. **🏆 Microsoft Hackathon** | Next.js · Python · Azure / OpenAI |
+| 🏥 **[Facility Trust Desk](https://github.com/ankitranjan-dsai/facility-trust-desk)** | Retrieve-then-judge AI pipeline turning messy health-facility records into **cited, trustworthy** capability verdicts. **🏆 Databricks Hackathon 2026** | RAG · LLM · Streamlit |
+| 📦 **[BatchHelm AI](https://github.com/ankitranjan-dsai/batchhelm-ai)** | Autonomous recall command center coordinating product batches, shelves, and store teams. **🏆 Qwen Cloud Hackathon** | Multi-agent · Python |
 | 🕸️ **[Temporal Path Explorer](https://github.com/ankitranjan-dsai/temporal-path-explorer)** | Streamlit app for exploring temporal paths in time-evolving networks. *(MSc Group Project)* | Streamlit · Graphs |
 | 🚚 **[Delivery Time Prediction](https://github.com/ankitranjan-dsai/LR_Delivery_Time_Prediction)** | End-to-end supervised ML pipeline on Porter data — **R² = 0.8636**, with RFE feature selection & reproducible diagnostics. | scikit-learn · Statsmodels |
 | 🚕 **[NYC Taxi EDA](https://github.com/ankitranjan-dsai/EDA_Optimising_NYC_Taxis_AnkitRanjan)** | Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial zone insights for route & dispatch optimisation. | Pandas · Seaborn · GeoPandas |
