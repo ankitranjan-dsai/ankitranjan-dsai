@@ -193,11 +193,22 @@ Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial z
 
 <div align="center">
 
+<!-- Self-hosted profile dashboard -->
 <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/dashboard.svg" alt="Profile dashboard" />
 
 <br/><br/>
 
+<!-- Self-hosted language stats -->
 <img width="62%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/languages.svg" alt="Most used languages" />
+
+<br/><br/>
+
+<!-- Self-hosted contribution snake (dark / light mode) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake.svg" />
+  <img width="100%" alt="GitHub contribution snake" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake.svg" />
+</picture>
 
 </div>
 
@@ -214,6 +225,7 @@ Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial z
 
 <br/>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer" alt="footer" />
+<!-- Self-hosted footer wave -->
+<img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner.svg" alt="footer" />
 
 </div>
