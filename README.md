@@ -198,11 +198,6 @@ Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial z
 
 <br/><br/>
 
-<img width="48%" src="https://github-readme-stats.vercel.app/api?username=ankitranjan-dsai&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ankitranjan-dsai&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
-
-<br/><br/>
-
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=ankitranjan-dsai&theme=tokyonight&hide_border=true" alt="GitHub streak" />
 
 <br/><br/>
