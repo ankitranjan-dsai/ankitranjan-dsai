@@ -1,76 +1,15 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
-  <defs>
-    <linearGradient id="dbg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b2e"/>
-    </linearGradient>
-    <linearGradient id="val" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#58a6ff"/>
-      <stop offset="100%" stop-color="#a371f7"/>
-    </linearGradient>
-    <linearGradient id="val2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#7ee787"/>
-      <stop offset="100%" stop-color="#58a6ff"/>
-    </linearGradient>
-  </defs>
 
-  <rect width="1200" height="400" rx="18" fill="url(#dbg)"/>
-
-  <!-- header -->
-  <circle cx="40" cy="44" r="6" fill="#7ee787"/>
-  <text x="58" y="50" fill="#f0f6fc" font-size="24" font-weight="800" letter-spacing="1">PROFILE AT A GLANCE</text>
-  <text x="58" y="72" fill="#8b949e" font-size="14">A quick snapshot of academics, impact &amp; experience</text>
-  <line x1="40" y1="88" x2="1160" y2="88" stroke="#30363d" stroke-width="1"/>
-
-  <!-- ROW 1 -->
-  <!-- tile 1 -->
-  <g>
-    <rect x="40" y="108" width="357" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="40" y="108" width="6" height="120" rx="3" fill="#58a6ff"/>
-    <text x="70" y="168" fill="url(#val)" font-size="42" font-weight="800">3.96 / 4.0</text>
-    <text x="70" y="196" fill="#c9d1d9" font-size="15" font-weight="600">PG Certificate CGPA</text>
-    <text x="70" y="216" fill="#8b949e" font-size="13">Data Science &amp; AI · IIIT Bangalore</text>
-  </g>
-  <!-- tile 2 -->
-  <g>
-    <rect x="421" y="108" width="357" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="421" y="108" width="6" height="120" rx="3" fill="#a371f7"/>
-    <text x="451" y="168" fill="url(#val)" font-size="42" font-weight="800">R² 0.8636</text>
-    <text x="451" y="196" fill="#c9d1d9" font-size="15" font-weight="600">ML Model Accuracy</text>
-    <text x="451" y="216" fill="#8b949e" font-size="13">Delivery-Time Regression Pipeline</text>
-  </g>
-  <!-- tile 3 -->
-  <g>
-    <rect x="802" y="108" width="358" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="802" y="108" width="6" height="120" rx="3" fill="#7ee787"/>
-    <text x="832" y="168" fill="url(#val2)" font-size="42" font-weight="800">Top 1%</text>
-    <text x="832" y="196" fill="#c9d1d9" font-size="15" font-weight="600">Australian Maths Olympiad</text>
-    <text x="832" y="216" fill="#8b949e" font-size="13">3rd Prize · Global ranking</text>
-  </g>
-
-  <!-- ROW 2 -->
-  <!-- tile 4 -->
-  <g>
-    <rect x="40" y="244" width="357" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="40" y="244" width="6" height="120" rx="3" fill="#7ee787"/>
-    <text x="70" y="304" fill="url(#val2)" font-size="42" font-weight="800">4+ Years</text>
-    <text x="70" y="332" fill="#c9d1d9" font-size="15" font-weight="600">Mathematics SME</text>
-    <text x="70" y="352" fill="#8b949e" font-size="13">CHEGG · Photomath · MathMaster</text>
-  </g>
-  <!-- tile 5 -->
-  <g>
-    <rect x="421" y="244" width="357" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="421" y="244" width="6" height="120" rx="3" fill="#58a6ff"/>
-    <text x="451" y="304" fill="url(#val)" font-size="42" font-weight="800">7+ Builds</text>
-    <text x="451" y="332" fill="#c9d1d9" font-size="15" font-weight="600">Shipped Projects</text>
-    <text x="451" y="352" fill="#8b949e" font-size="13">AI agents · ML · RAG · Analytics</text>
-  </g>
-  <!-- tile 6 -->
-  <g>
-    <rect x="802" y="244" width="358" height="120" rx="12" fill="#161b29" stroke="#30363d"/>
-    <rect x="802" y="244" width="6" height="120" rx="3" fill="#a371f7"/>
-    <text x="832" y="304" fill="url(#val)" font-size="42" font-weight="800">Distinction</text>
-    <text x="832" y="332" fill="#c9d1d9" font-size="15" font-weight="600">MSc DS &amp; AI · Expected</text>
-    <text x="832" y="352" fill="#8b949e" font-size="13">University of Liverpool</text>
-  </g>
-</svg>
+    <svg width="576.5"  height="120" viewBox="0 0 576.5 120" fill="#0d1117" xmlns="http://www.w3.org/2000/svg">
+    <style>
+    .text { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff }
+    .small { font: 600 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9 }
+    .gray { fill: #858585 }
+    </style>
+    <rect x="0.5" y="0.5" width="575.5" height="99%" rx="4.5" fill="#0d1117" stroke="#30363d"/>
+    <text x="25" y="45" class="text">Something went wrong!</text>
+    <text data-testid="message" x="25" y="55" class="text small">
+      <tspan x="25" dy="18">Downtime due to GitHub API rate limiting</tspan>
+      <tspan x="25" dy="18" class="gray">You can deploy own instance or wait until public will be no longer limited</tspan>
+    </text>
+    </svg>
+  
