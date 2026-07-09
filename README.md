@@ -193,17 +193,30 @@ Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial z
 
 <div align="center">
 
-<!-- Self-hosted profile dashboard -->
+<!-- Self-hosted profile dashboard (auto-generated daily) -->
 <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/dashboard.svg" alt="Profile dashboard" />
 
 <br/><br/>
 
-<!-- Self-hosted language stats -->
+<!-- Self-hosted streak stats (auto-generated daily) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/streak-stats-dark.svg" />
+  <img src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/streak-stats.svg" alt="GitHub streak stats" />
+</picture>
+
+<br/><br/>
+
+<!-- Self-hosted language stats (auto-generated daily) -->
 <img width="62%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/languages.svg" alt="Most used languages" />
 
 <br/><br/>
 
-<!-- Self-hosted contribution snake (dark / light mode) -->
+<!-- Self-hosted activity graph (auto-generated daily) -->
+<img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/activity-graph.svg" alt="Contribution activity graph" />
+
+<br/><br/>
+
+<!-- Self-hosted contribution snake (auto-generated twice daily) -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake.svg" />
