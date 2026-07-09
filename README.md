@@ -8,39 +8,16 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=760&lines=MSc+Data+Science+%26+AI+%40+University+of+Liverpool;Building+multi-agent+AI+systems+%F0%9F%A4%96;Python+%E2%80%A2+Machine+Learning+%E2%80%A2+NLP+%E2%80%A2+Applied+AI;Turning+messy+data+into+trustworthy+decisions)](https://git.io/typing-svg)
 
-<!-- ====================== TOP BADGES ====================== -->
+<!-- ====================== STATUS BADGES ====================== -->
 <img src="https://komarev.com/ghpvc/?username=ankitranjan-dsai&label=Profile%20Views&color=58A6FF&style=flat" alt="Profile views" />
 <a href="https://github.com/ankitranjan-dsai?tab=followers"><img src="https://img.shields.io/github/followers/ankitranjan-dsai?label=Followers&style=flat&color=58A6FF" alt="Followers" /></a>
 <img src="https://img.shields.io/badge/Open%20to-Work%20%26%20Collaboration-7ee787?style=flat" alt="Open to work" />
-<a href="https://www.kaggle.com/ankitdsranjan"><img src="https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=flat&logo=kaggle&logoColor=white" alt="Kaggle" /></a>
 
 </div>
 
 ---
 
-## 🧠 About Me
-
-```python
-class AnkitRanjan:
-    def __init__(self):
-        self.role        = "Data Science & AI Engineer (in training)"
-        self.education   = "MSc Data Science & AI @ University of Liverpool"
-        self.focus       = ["Multi-agent AI", "Machine Learning", "NLP", "Applied Statistics"]
-        self.currently   = "Building SGAI — a multi-agent code-security reviewer"
-        self.superpower  = "4+ years turning hard math into clear, correct answers"
-```
-
-- 🎓 **MSc Data Science & AI** at the **University of Liverpool** *(Expected: Distinction)* — built on a **PG Certificate** from **IIIT Bangalore** (CGPA **3.96 / 4.0**) and **MIT MicroMasters** coursework in Statistics & Data Science.
-- 🤖 I design **multi-agent AI systems** — security reviewers, retrieve-then-judge **RAG** pipelines, and autonomous operational workflows.
-- 🔭 Currently building **[SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)**: a multi-agent code-security reviewer on **Google ADK + MCP** for the Kaggle AI Agents Capstone.
-- 🧮 **4+ years** as a Mathematics Subject-Matter Expert — analytical rigor, high-accuracy validation, and clear communication for non-technical audiences.
-- 🌱 Exploring: **LLM agents**, **deep learning**, **Power BI / Tableau**, and **production-grade ML**.
-- 💬 Ask me about **Python, ML, NLP, statistical modelling, multi-agent systems**, or applied AI.
-
----
-
-## 🌐 Connect With Me
-
+<!-- ====================== QUICK LINKS ====================== -->
 <div align="center">
 
 <a href="https://www.linkedin.com/in/ankit-ranjan-datascience">
@@ -52,11 +29,63 @@ class AnkitRanjan:
 <a href="mailto:ankit0ranjan@gmail.com">
   <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
 </a>
-<a href="https://github.com/ankitranjan-dsai">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
 
 </div>
+
+---
+
+## 📋 Table of Contents
+
+- [About Me](#-about-me)
+- [What I'm Looking For](#-what-im-looking-for)
+- [Education & Certifications](#-education--certifications)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Featured Projects](#-featured-projects)
+- [Key Achievements](#-key-achievements)
+- [GitHub Stats](#-github-stats)
+- [Contribution Graph](#-contribution-graph)
+
+---
+
+## 🧠 About Me
+
+```python
+class AnkitRanjan:
+    def __init__(self):
+        self.role        = "Data Science & AI Engineer"
+        self.education   = "MSc Data Science & AI @ University of Liverpool"
+        self.focus       = ["Multi-agent AI", "Machine Learning", "NLP", "Applied Statistics"]
+        self.currently   = "Building BatchHelm AI — autonomous recall command center"
+        self.superpower  = "4+ years turning hard math into clear, correct answers"
+```
+
+- 🎓 **MSc Data Science & AI** at the **University of Liverpool, UK** *(Expected: Distinction)* — built on a **PG Certificate** from **IIIT Bangalore** (CGPA **3.96 / 4.0**) and **MIT MicroMasters** coursework in Statistics & Data Science.
+- 🤖 I design **multi-agent AI systems** — security reviewers, retrieve-then-judge **RAG** pipelines, and autonomous operational workflows.
+- 🔭 Currently building **[BatchHelm AI](https://github.com/ankitranjan-dsai/batchhelm-ai)**: an autonomous recall command center for product batches, shelves, and store teams.
+- 🛡️ Recently shipped **[SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)**: a multi-agent code-security reviewer on **Google ADK + MCP**.
+- 🧮 **4+ years** as a Mathematics Subject-Matter Expert — analytical rigor, high-accuracy validation, and clear communication for non-technical audiences.
+- 🌱 Exploring: **LLM agents**, **deep learning**, **Power BI / Tableau**, and **production-grade ML**.
+- 💬 Ask me about **Python, ML, NLP, statistical modelling, multi-agent systems**, or applied AI.
+
+---
+
+## 🎯 What I'm Looking For
+
+> **I'm actively seeking opportunities in Data Science, AI/ML Engineering, and Applied AI roles** — internships, graduate positions, and collaborative projects.
+
+**What I bring to the table:**
+- End-to-end ML pipeline experience (EDA → modelling → deployment)
+- Multi-agent AI system design (Google ADK, MCP, autonomous workflows)
+- Strong statistical foundation + 4+ years of analytical problem-solving
+- Hackathon-proven ability to ship under pressure (3x hackathon builder)
+
+**Interested in:**
+- 🤖 AI/ML Engineering roles (LLMs, agents, RAG, MLOps)
+- 📊 Data Science positions (modelling, analytics, experimentation)
+- 🔬 Research collaborations (NLP, multi-agent systems, applied AI)
+- 🏗️ Open-source contributions (Python ML/AI ecosystem)
+
+📫 **Reach me:** [ankit0ranjan@gmail.com](mailto:ankit0ranjan@gmail.com) | [LinkedIn](https://www.linkedin.com/in/ankit-ranjan-datascience)
 
 ---
 
@@ -124,15 +153,32 @@ class AnkitRanjan:
 
 </div>
 
-| Project | What it does | Stack |
-|---|---|---|
-| 🔐 **[SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)** | Multi-agent reviewer that audits a codebase for CVEs & unsafe patterns, risk-ranks findings, explains fixes, and remembers what changed since the last scan. **🏆 Kaggle × Google AI Hackathon 2026** | Google ADK · MCP · Bandit · OSV.dev |
-| 🎓 **[Aimura AI](https://github.com/ankitranjan-dsai/aimura_ai)** *(with [@umapriya30](https://github.com/umapriya30))* | Student career-planning OS — turns one guided intake into a grounded study-to-career plan with a readiness score, career-fit intelligence, and an AI mentor chat. **🏆 Microsoft Hackathon** | Next.js · Python · Azure / OpenAI |
-| 🏥 **[Facility Trust Desk](https://github.com/ankitranjan-dsai/facility-trust-desk)** | Retrieve-then-judge AI pipeline turning messy health-facility records into **cited, trustworthy** capability verdicts. **🏆 Databricks Hackathon 2026** | RAG · LLM · Streamlit |
-| 📦 **[BatchHelm AI](https://github.com/ankitranjan-dsai/batchhelm-ai)** | Autonomous recall command center coordinating product batches, shelves, and store teams. **🏆 Qwen Cloud Hackathon** | Multi-agent · Python |
-| 🕸️ **[Temporal Path Explorer](https://github.com/ankitranjan-dsai/temporal-path-explorer)** | Streamlit app for exploring temporal paths in time-evolving networks. *(MSc Group Project)* | Streamlit · Graphs |
-| 🚚 **[Delivery Time Prediction](https://github.com/ankitranjan-dsai/LR_Delivery_Time_Prediction)** | End-to-end supervised ML pipeline on Porter data — **R² = 0.8636**, with RFE feature selection & reproducible diagnostics. | scikit-learn · Statsmodels |
-| 🚕 **[NYC Taxi EDA](https://github.com/ankitranjan-dsai/EDA_Optimising_NYC_Taxis_AnkitRanjan)** | Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial zone insights for route & dispatch optimisation. | Pandas · Seaborn · GeoPandas |
+### 🔐 [SGAI — SecureGuardAI](https://github.com/ankitranjan-dsai/SGAI)
+Multi-agent code-security reviewer that audits codebases for CVEs & unsafe patterns, risk-ranks findings, explains fixes, and tracks changes across scans.  
+**🏆 Kaggle × Google AI Hackathon 2026**  
+`Google ADK` · `MCP` · `Bandit` · `OSV.dev`
+
+### 🏥 [Facility Trust Desk](https://github.com/ankitranjan-dsai/facility-trust-desk)
+Retrieve-then-judge AI pipeline turning messy Indian health-facility records into **cited, trustworthy** capability verdicts.  
+**🏆 Databricks Hackathon 2026**  
+`RAG` · `LLM` · `Streamlit`
+
+### 📦 [BatchHelm AI](https://github.com/ankitranjan-dsai/batchhelm-ai)
+Autonomous recall command center coordinating product batches, shelves, and store teams via multi-agent workflows.  
+**🏆 Qwen Cloud Hackathon**  
+`Multi-agent` · `Python` · `Autonomous workflows`
+
+### 🕸️ [Temporal Path Explorer](https://github.com/ankitranjan-dsai/temporal-path-explorer)
+Streamlit app for exploring temporal paths in time-evolving networks — MSc Group Project (Team 9, University of Liverpool).  
+`Streamlit` · `Graph Analysis` · `Temporal Networks`
+
+### 🚚 [Delivery Time Prediction](https://github.com/ankitranjan-dsai/LR_Delivery_Time_Prediction)
+End-to-end supervised ML pipeline on Porter data — **R² = 0.8636**, with RFE feature selection & reproducible diagnostics.  
+`scikit-learn` · `Statsmodels` · `EDA`
+
+### 🚕 [NYC Taxi EDA](https://github.com/ankitranjan-dsai/EDA_Optimising_NYC_Taxis_AnkitRanjan)
+Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial zone insights for route & dispatch optimisation.  
+`Pandas` · `Seaborn` · `GeoPandas`
 
 ---
 
@@ -144,7 +190,7 @@ class AnkitRanjan:
 
 ---
 
-## 📊 Profile Dashboard
+## 📊 GitHub Stats
 
 <div align="center">
 
@@ -152,13 +198,14 @@ class AnkitRanjan:
 
 <br/><br/>
 
-<img width="62%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/languages.svg" alt="Most used languages" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username=ankitranjan-dsai&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ankitranjan-dsai&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
 
-<br/>
+<br/><br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=ankitranjan-dsai&theme=tokyonight&hide_border=true" alt="GitHub streak" />
 
-<br/>
+<br/><br/>
 
 <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=ankitranjan-dsai&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Activity graph" />
 
@@ -184,6 +231,13 @@ class AnkitRanjan:
 <div align="center">
 
 > *"Without data, you're just another person with an opinion."* — W. Edwards Deming
+
+<br/>
+
+**Let's build something together.**  
+📫 [ankit0ranjan@gmail.com](mailto:ankit0ranjan@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/ankit-ranjan-datascience) · 🏅 [Kaggle](https://www.kaggle.com/ankitdsranjan)
+
+<br/>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=120&section=footer" alt="footer" />
 
