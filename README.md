@@ -43,7 +43,6 @@
 - [Featured Projects](#-featured-projects)
 - [Key Achievements](#-key-achievements)
 - [GitHub Stats](#-github-stats)
-- [Contribution Graph](#-contribution-graph)
 
 ---
 
@@ -198,26 +197,7 @@ Cleaned & analysed **millions** of 2023 trip records (Parquet) with geospatial z
 
 <br/><br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=ankitranjan-dsai&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-
-<br/><br/>
-
-<img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=ankitranjan-dsai&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Activity graph" />
-
-</div>
-
----
-
-<!-- ====================== CONTRIBUTION SNAKE ====================== -->
-<div align="center">
-
-### 🐍 Watch my contributions get eaten
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/output/github-contribution-grid-snake.svg" />
-</picture>
+<img width="62%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/languages.svg" alt="Most used languages" />
 
 </div>
 
