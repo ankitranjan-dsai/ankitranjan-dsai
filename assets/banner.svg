@@ -81,4 +81,11 @@
     <circle cx="82" cy="297" r="4" fill="#7ee787"/>
     <text x="94" y="301" fill="#c9d1d9" font-size="13" font-weight="500">Liverpool, United Kingdom</text>
   </g>
+  <g>
+    <rect x="248" y="284" width="150" height="26" rx="13" fill="#12261c" stroke="#238636" stroke-width="1"/>
+    <circle cx="266" cy="297" r="4" fill="#7ee787">
+      <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="278" y="301" fill="#7ee787" font-size="13" font-weight="600">OPEN TO WORK</text>
+  </g>
 </svg>

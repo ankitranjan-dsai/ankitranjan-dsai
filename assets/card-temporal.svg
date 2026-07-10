@@ -1,0 +1,11 @@
+<svg viewBox="0 0 594 192" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="592" height="190" rx="12" fill="#161b29" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="1" y="1" width="6" height="190" rx="3" fill="#a371f7"/>
+  <circle cx="32" cy="36" r="4" fill="#a371f7"/>
+  <text x="44" y="41" fill="#a371f7" font-size="12" font-weight="700" letter-spacing="2">GRAPHS · MSc PROJECT</text>
+  <text x="28" y="82" fill="#f0f6fc" font-size="24" font-weight="800">Temporal Path Explorer</text>
+  <text x="28" y="110" fill="#8b949e" font-size="14">Streamlit app for exploring temporal paths in</text>
+  <text x="28" y="130" fill="#8b949e" font-size="14">time-evolving networks. (Team 9, UoL)</text>
+  <text x="28" y="168" fill="#c9d1d9" font-size="13" font-weight="600">Streamlit · NetworkX · Visualisation</text>
+  <text x="566" y="168" fill="#a371f7" font-size="13" font-weight="700" text-anchor="end">View repo →</text>
+</svg>

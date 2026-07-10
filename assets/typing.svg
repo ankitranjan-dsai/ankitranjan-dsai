@@ -1,0 +1,17 @@
+<svg viewBox="0 0 760 64" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code', 'Cascadia Code', Consolas, monospace">
+  <text x="380" y="40" text-anchor="middle" fill="#58a6ff" font-size="22" font-weight="600" opacity="0">MSc Data Science &amp; AI @ University of Liverpool
+    <animate attributeName="opacity" begin="0s" dur="12s" repeatCount="indefinite" keyTimes="0;0.033;0.216;0.25;1" values="0;1;1;0;0"/>
+  </text>
+  <text x="380" y="40" text-anchor="middle" fill="#58a6ff" font-size="22" font-weight="600" opacity="0">Building multi-agent AI systems
+    <animate attributeName="opacity" begin="3s" dur="12s" repeatCount="indefinite" keyTimes="0;0.033;0.216;0.25;1" values="0;1;1;0;0"/>
+  </text>
+  <text x="380" y="40" text-anchor="middle" fill="#58a6ff" font-size="22" font-weight="600" opacity="0">Python · Machine Learning · NLP · Applied AI
+    <animate attributeName="opacity" begin="6s" dur="12s" repeatCount="indefinite" keyTimes="0;0.033;0.216;0.25;1" values="0;1;1;0;0"/>
+  </text>
+  <text x="380" y="40" text-anchor="middle" fill="#58a6ff" font-size="22" font-weight="600" opacity="0">Turning messy data into trustworthy decisions
+    <animate attributeName="opacity" begin="9s" dur="12s" repeatCount="indefinite" keyTimes="0;0.033;0.216;0.25;1" values="0;1;1;0;0"/>
+  </text>
+  <rect x="374" y="52" width="12" height="4" rx="2" fill="#7ee787">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

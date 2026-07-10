@@ -1,0 +1,6 @@
+<svg viewBox="0 0 594 192" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="592" height="190" rx="12" fill="#13182a" stroke="#58a6ff" stroke-opacity="0.55" stroke-dasharray="7 6" stroke-width="1.5"/>
+  <text x="297" y="82" fill="#f0f6fc" font-size="22" font-weight="800" text-anchor="middle">Explore all repositories</text>
+  <text x="297" y="114" fill="#58a6ff" font-size="15" font-weight="600" text-anchor="middle">→  github.com/ankitranjan-dsai</text>
+  <text x="297" y="144" fill="#8b949e" font-size="13" text-anchor="middle">AI agents · Machine Learning · RAG · Analytics</text>
+</svg>

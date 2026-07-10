@@ -1,15 +1,23 @@
-
-    <svg width="576.5"  height="120" viewBox="0 0 576.5 120" fill="#0d1117" xmlns="http://www.w3.org/2000/svg">
-    <style>
-    .text { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff }
-    .small { font: 600 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9 }
-    .gray { fill: #858585 }
-    </style>
-    <rect x="0.5" y="0.5" width="575.5" height="99%" rx="4.5" fill="#0d1117" stroke="#30363d"/>
-    <text x="25" y="45" class="text">Something went wrong!</text>
-    <text data-testid="message" x="25" y="55" class="text small">
-      <tspan x="25" dy="18">Downtime due to GitHub API rate limiting</tspan>
-      <tspan x="25" dy="18" class="gray">You can deploy own instance or wait until public will be no longer limited</tspan>
-    </text>
-    </svg>
-  
+<svg viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="lbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#161b2e"/></linearGradient>
+    <clipPath id="barclip"><rect x="24" y="70" width="492" height="18" rx="9"/></clipPath>
+  </defs>
+  <rect width="540" height="230" rx="16" fill="url(#lbg)" stroke="#30363d"/>
+  <circle cx="38" cy="40" r="5" fill="#7ee787"/>
+  <text x="52" y="46" fill="#f0f6fc" font-size="19" font-weight="800" letter-spacing="0.5">Most Used Languages</text>
+  <g clip-path="url(#barclip)">
+    <rect x="24" y="70" width="307.5" height="18" fill="#3776AB"/>
+    <rect x="331.5" y="70" width="122.0" height="18" fill="#DA5B0B"/>
+    <rect x="453.5" y="70" width="36.9" height="18" fill="#3178C6"/>
+    <rect x="490.4" y="70" width="18.2" height="18" fill="#563D7C"/>
+    <rect x="508.6" y="70" width="7.4" height="18" fill="#E34C26"/>
+  </g>
+  <g font-size="14">
+    <circle cx="30" cy="128" r="6" fill="#3776AB"/><text x="44" y="133" fill="#c9d1d9" font-weight="600">Python</text><text x="250" y="133" fill="#8b949e" text-anchor="end">62.5%</text>
+    <circle cx="294" cy="128" r="6" fill="#DA5B0B"/><text x="308" y="133" fill="#c9d1d9" font-weight="600">Jupyter Notebook</text><text x="516" y="133" fill="#8b949e" text-anchor="end">24.8%</text>
+    <circle cx="30" cy="166" r="6" fill="#3178C6"/><text x="44" y="171" fill="#c9d1d9" font-weight="600">TypeScript</text><text x="250" y="171" fill="#8b949e" text-anchor="end">7.5%</text>
+    <circle cx="294" cy="166" r="6" fill="#563D7C"/><text x="308" y="171" fill="#c9d1d9" font-weight="600">CSS</text><text x="516" y="171" fill="#8b949e" text-anchor="end">3.7%</text>
+    <circle cx="30" cy="204" r="6" fill="#E34C26"/><text x="44" y="209" fill="#c9d1d9" font-weight="600">HTML</text><text x="250" y="209" fill="#8b949e" text-anchor="end">1.5%</text>
+  </g>
+</svg>

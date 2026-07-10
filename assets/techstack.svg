@@ -1,0 +1,139 @@
+<svg viewBox="0 0 1200 330" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs><linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#161b2e"/></linearGradient></defs>
+  <rect width="1200" height="330" rx="18" fill="url(#tbg)"/>
+  <text x="40" y="58" fill="#58a6ff" font-size="12.5" font-weight="700" letter-spacing="2">LANGUAGES</text>
+  <g>
+    <rect x="250" y="34" width="97" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="267" cy="52" r="4" fill="#58a6ff"/>
+    <text x="280" y="57.5" fill="#c9d1d9" font-size="15" font-weight="600">Python</text>
+  </g>
+  <g>
+    <rect x="359" y="34" width="71" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="376" cy="52" r="4" fill="#58a6ff"/>
+    <text x="389" y="57.5" fill="#c9d1d9" font-size="15" font-weight="600">SQL</text>
+  </g>
+  <g>
+    <rect x="442" y="34" width="54" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="459" cy="52" r="4" fill="#58a6ff"/>
+    <text x="472" y="57.5" fill="#c9d1d9" font-size="15" font-weight="600">C</text>
+  </g>
+  <g>
+    <rect x="508" y="34" width="71" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="525" cy="52" r="4" fill="#58a6ff"/>
+    <text x="538" y="57.5" fill="#c9d1d9" font-size="15" font-weight="600">C++</text>
+  </g>
+  <g>
+    <rect x="591" y="34" width="80" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="608" cy="52" r="4" fill="#58a6ff"/>
+    <text x="621" y="57.5" fill="#c9d1d9" font-size="15" font-weight="600">Java</text>
+  </g>
+  <text x="40" y="116" fill="#a371f7" font-size="12.5" font-weight="700" letter-spacing="2">ML &amp; DATA</text>
+  <g>
+    <rect x="250" y="92" width="106" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="267" cy="110" r="4" fill="#a371f7"/>
+    <text x="280" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">PyTorch</text>
+  </g>
+  <g>
+    <rect x="368" y="92" width="149" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="385" cy="110" r="4" fill="#a371f7"/>
+    <text x="398" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">scikit-learn</text>
+  </g>
+  <g>
+    <rect x="529" y="92" width="97" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="546" cy="110" r="4" fill="#a371f7"/>
+    <text x="559" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">Pandas</text>
+  </g>
+  <g>
+    <rect x="638" y="92" width="89" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="655" cy="110" r="4" fill="#a371f7"/>
+    <text x="668" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">NumPy</text>
+  </g>
+  <g>
+    <rect x="739" y="92" width="140" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="756" cy="110" r="4" fill="#a371f7"/>
+    <text x="769" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">Statsmodels</text>
+  </g>
+  <g>
+    <rect x="891" y="92" width="89" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="908" cy="110" r="4" fill="#a371f7"/>
+    <text x="921" y="115.5" fill="#c9d1d9" font-size="15" font-weight="600">SciPy</text>
+  </g>
+  <text x="40" y="174" fill="#7ee787" font-size="12.5" font-weight="700" letter-spacing="2">VISUALISATION &amp; BI</text>
+  <g>
+    <rect x="250" y="150" width="132" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="267" cy="168" r="4" fill="#7ee787"/>
+    <text x="280" y="173.5" fill="#c9d1d9" font-size="15" font-weight="600">Matplotlib</text>
+  </g>
+  <g>
+    <rect x="394" y="150" width="106" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="411" cy="168" r="4" fill="#7ee787"/>
+    <text x="424" y="173.5" fill="#c9d1d9" font-size="15" font-weight="600">Seaborn</text>
+  </g>
+  <g>
+    <rect x="512" y="150" width="97" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="529" cy="168" r="4" fill="#7ee787"/>
+    <text x="542" y="173.5" fill="#c9d1d9" font-size="15" font-weight="600">Plotly</text>
+  </g>
+  <g>
+    <rect x="621" y="150" width="114" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="638" cy="168" r="4" fill="#7ee787"/>
+    <text x="651" y="173.5" fill="#c9d1d9" font-size="15" font-weight="600">Power BI</text>
+  </g>
+  <g>
+    <rect x="747" y="150" width="106" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="764" cy="168" r="4" fill="#7ee787"/>
+    <text x="777" y="173.5" fill="#c9d1d9" font-size="15" font-weight="600">Tableau</text>
+  </g>
+  <text x="40" y="232" fill="#58a6ff" font-size="12.5" font-weight="700" letter-spacing="2">AI · AGENTS &amp; APPS</text>
+  <g>
+    <rect x="250" y="208" width="132" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="267" cy="226" r="4" fill="#58a6ff"/>
+    <text x="280" y="231.5" fill="#c9d1d9" font-size="15" font-weight="600">Google ADK</text>
+  </g>
+  <g>
+    <rect x="394" y="208" width="71" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="411" cy="226" r="4" fill="#58a6ff"/>
+    <text x="424" y="231.5" fill="#c9d1d9" font-size="15" font-weight="600">MCP</text>
+  </g>
+  <g>
+    <rect x="477" y="208" width="106" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="494" cy="226" r="4" fill="#58a6ff"/>
+    <text x="507" y="231.5" fill="#c9d1d9" font-size="15" font-weight="600">FastAPI</text>
+  </g>
+  <g>
+    <rect x="595" y="208" width="123" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="612" cy="226" r="4" fill="#58a6ff"/>
+    <text x="625" y="231.5" fill="#c9d1d9" font-size="15" font-weight="600">Streamlit</text>
+  </g>
+  <g>
+    <rect x="730" y="208" width="106" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="747" cy="226" r="4" fill="#58a6ff"/>
+    <text x="760" y="231.5" fill="#c9d1d9" font-size="15" font-weight="600">Jupyter</text>
+  </g>
+  <text x="40" y="290" fill="#a371f7" font-size="12.5" font-weight="700" letter-spacing="2">TOOLS &amp; PLATFORMS</text>
+  <g>
+    <rect x="250" y="266" width="71" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="267" cy="284" r="4" fill="#a371f7"/>
+    <text x="280" y="289.5" fill="#c9d1d9" font-size="15" font-weight="600">Git</text>
+  </g>
+  <g>
+    <rect x="333" y="266" width="97" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="350" cy="284" r="4" fill="#a371f7"/>
+    <text x="363" y="289.5" fill="#c9d1d9" font-size="15" font-weight="600">GitHub</text>
+  </g>
+  <g>
+    <rect x="442" y="266" width="97" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="459" cy="284" r="4" fill="#a371f7"/>
+    <text x="472" y="289.5" fill="#c9d1d9" font-size="15" font-weight="600">Docker</text>
+  </g>
+  <g>
+    <rect x="551" y="266" width="132" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="568" cy="284" r="4" fill="#a371f7"/>
+    <text x="581" y="289.5" fill="#c9d1d9" font-size="15" font-weight="600">Databricks</text>
+  </g>
+  <g>
+    <rect x="695" y="266" width="89" height="36" rx="18" fill="#161b29" stroke="#30363d"/>
+    <circle cx="712" cy="284" r="4" fill="#a371f7"/>
+    <text x="725" y="289.5" fill="#c9d1d9" font-size="15" font-weight="600">Linux</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 594 192" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="592" height="190" rx="12" fill="#161b29" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="1" y="1" width="6" height="190" rx="3" fill="#7ee787"/>
+  <rect x="440" y="18" width="136" height="24" rx="12" fill="#7ee787" fill-opacity="0.15" stroke="#7ee787" stroke-opacity="0.55"/>
+  <text x="508" y="34.5" fill="#7ee787" font-size="11.5" font-weight="700" text-anchor="middle">★ Databricks '26</text>
+  <circle cx="32" cy="36" r="4" fill="#7ee787"/>
+  <text x="44" y="41" fill="#7ee787" font-size="12" font-weight="700" letter-spacing="2">RAG / LLM · HEALTHCARE</text>
+  <text x="28" y="82" fill="#f0f6fc" font-size="24" font-weight="800">Facility Trust Desk</text>
+  <text x="28" y="110" fill="#8b949e" font-size="14">Retrieve-then-judge pipeline turning messy health-facility</text>
+  <text x="28" y="130" fill="#8b949e" font-size="14">records into cited, trustworthy capability verdicts.</text>
+  <text x="28" y="168" fill="#c9d1d9" font-size="13" font-weight="600">RAG · LLM · Streamlit</text>
+  <text x="566" y="168" fill="#7ee787" font-size="13" font-weight="700" text-anchor="end">View repo →</text>
+</svg>
