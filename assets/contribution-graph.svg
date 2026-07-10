@@ -3,7 +3,7 @@
 <rect width="912" height="376" rx="18" fill="url(#cbg)" stroke="#30363d"/>
 <circle cx="40" cy="42" r="6" fill="#7ee787"/>
 <text x="58" y="48" fill="#f0f6fc" font-size="22" font-weight="800">Ankit&#8217;s Contribution Graph</text>
-<text x="58" y="72" fill="#8b949e" font-size="14">299 contributions in the last 6 months</text>
+<text x="58" y="72" fill="#8b949e" font-size="14">293 contributions in the last 6 months</text>
 <text x="74" y="94" fill="#8b949e" font-size="13" font-weight="600">Jan</text>
 <text x="194" y="94" fill="#8b949e" font-size="13" font-weight="600">Feb</text>
 <text x="314" y="94" fill="#8b949e" font-size="13" font-weight="600">Mar</text>
@@ -181,7 +181,7 @@
 <rect x="794" y="138" width="24" height="24" rx="5" fill="#26a641"><title>2026-06-22: 8 contributions</title></rect>
 <rect x="794" y="168" width="24" height="24" rx="5" fill="#161b22"><title>2026-06-23: 0 contributions</title></rect>
 <rect x="794" y="198" width="24" height="24" rx="5" fill="#0e4429"><title>2026-06-24: 1 contributions</title></rect>
-<rect x="794" y="228" width="24" height="24" rx="5" fill="#26a641"><title>2026-06-25: 7 contributions</title></rect>
+<rect x="794" y="228" width="24" height="24" rx="5" fill="#161b22"><title>2026-06-25: 0 contributions</title></rect>
 <rect x="794" y="258" width="24" height="24" rx="5" fill="#39d353"><title>2026-06-26: 28 contributions</title></rect>
 <rect x="794" y="288" width="24" height="24" rx="5" fill="#39d353"><title>2026-06-27: 33 contributions</title></rect>
 <rect x="824" y="108" width="24" height="24" rx="5" fill="#39d353"><title>2026-06-28: 16 contributions</title></rect>
@@ -196,7 +196,7 @@
 <rect x="854" y="168" width="24" height="24" rx="5" fill="#161b22"><title>2026-07-07: 0 contributions</title></rect>
 <rect x="854" y="198" width="24" height="24" rx="5" fill="#39d353"><title>2026-07-08: 12 contributions</title></rect>
 <rect x="854" y="228" width="24" height="24" rx="5" fill="#39d353"><title>2026-07-09: 25 contributions</title></rect>
-<rect x="854" y="258" width="24" height="24" rx="5" fill="#006d32"><title>2026-07-10: 3 contributions</title></rect>
+<rect x="854" y="258" width="24" height="24" rx="5" fill="#006d32"><title>2026-07-10: 4 contributions</title></rect>
 <text x="630" y="362" fill="#8b949e" font-size="12" text-anchor="end">Less</text>
 <rect x="640" y="346" width="24" height="24" rx="5" fill="#161b22"/>
 <rect x="670" y="346" width="24" height="24" rx="5" fill="#0e4429"/>
