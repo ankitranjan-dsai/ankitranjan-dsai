@@ -3,10 +3,12 @@
      No external stat APIs → nothing can rate-limit or break.
      ============================================================ -->
 
-<!-- ====================== ANIMATED BANNER ====================== -->
-<a href="https://github.com/ankitranjan-dsai">
-  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner.svg" alt="Ankit Ranjan — Data Science & AI" />
-</a>
+<!-- ====================== PHASE 1 TERMINAL BANNER ====================== -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-light.svg" />
+  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" alt="Ankit Ranjan — Data Science & AI Engineer · Terminal Profile Banner" />
+</picture>
 
 <!-- ====================== TYPING ANIMATION (self-hosted) ====================== -->
 <div align="center">
