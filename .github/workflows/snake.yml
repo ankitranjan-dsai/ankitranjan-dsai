@@ -1,0 +1,47 @@
+name: Generate Contribution Snake
+
+# Rebuilds the contribution-grid snake every day and pushes it to the
+# `output` branch, where the README's <picture> element picks it up.
+on:
+  schedule:
+    - cron: "47 3 * * *"   # daily, off-peak minute (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate snake SVGs from the contribution grid
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ankitranjan-dsai
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Deploy to output branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin output:output || true
+          if git show-ref --verify --quiet refs/heads/output; then
+            git worktree add .deploy output
+          else
+            git worktree add --orphan .deploy output
+          fi
+          cp dist/github-contribution-grid-snake.svg \
+             dist/github-contribution-grid-snake-dark.svg .deploy/
+          cd .deploy
+          git add *.svg
+          if git diff --staged --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: refresh contribution snake [skip ci]"
+            git push origin output
+          fi
