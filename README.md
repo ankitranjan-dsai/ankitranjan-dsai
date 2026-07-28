@@ -5,9 +5,9 @@
 
 <!-- ====================== PHASE 1 TERMINAL BANNER ====================== -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-light.svg" />
-  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" alt="Ankit Ranjan — Data Science & AI Engineer · Terminal Profile Banner" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.png" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-light.png" />
+  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.png" alt="Ankit Ranjan — Data Science & AI Engineer · Terminal Profile Banner" />
 </picture>
 
 <!-- ====================== TYPING ANIMATION (self-hosted) ====================== -->
