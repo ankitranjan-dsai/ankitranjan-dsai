@@ -21,8 +21,8 @@ already animates on this profile's README):
   * idle — each group drifts on explicit uneven keyTimes, so no group's motion
     lines up with its neighbour's
   * morph — 1200 of the dots detach and run PORTRAIT -> "ANKIT RANJAN" -> GLOBE
-    -> portrait on a 24s loop, while the face itself dims to 7% for the
-    excursion. The portrait is the resting state and holds 62% of the cycle
+    -> portrait on a 11.8s loop, while the face itself dims to 7% for the
+    excursion. The portrait is the resting state and holds 52% of the cycle
 
 The info rows are locked with textLength + lengthAdjust="spacingAndGlyphs" so
 right-aligned values stay on their dotted leaders in any browser font.
@@ -464,13 +464,19 @@ def travellers(mask, seed=17):
 
 # Timings in SECONDS, from which the percentage stops are derived. Holding these
 # absolute and letting the LOOP LENGTH grow with the beat count is what keeps the
-# portrait's share constant: adding a third beat lengthens the loop to ~34s
-# rather than squeezing the face down to 46% of it.
-FLY_S, HOLD_S = 1.44, 2.40
-REST_FRAC = 0.62       # share of the loop the portrait is at rest
+# portrait's share constant: adding a third beat lengthens the loop to ~17s
+# rather than squeezing the face down to 30% of it.
+#
+# These were halved from 1.44/2.40/0.62 (a 24s loop) — at that pace a visitor
+# who scrolled past the top of the README never saw a transition at all. The
+# floor is set by the HOLD: the dots land over MORPH_STAGGER, so a beat is only
+# fully assembled for HOLD_S - MORPH_STAGGER, and "ANKIT RANJAN" needs about a
+# second of that to actually read as two words rather than a flicker.
+FLY_S, HOLD_S = 0.84, 1.56
+REST_FRAC = 0.52       # share of the loop the portrait is at rest
 HEAD_SHARE = 0.65      # of that rest, how much falls BEFORE the first flight,
                        # so the first impression after load is a long portrait
-MORPH_STAGGER = 0.6    # s; well under one hold, so each beat still settles
+MORPH_STAGGER = 0.36   # s; well under one hold, so each beat still settles
 MORPH_LANES = 8        # shared delay classes
 
 

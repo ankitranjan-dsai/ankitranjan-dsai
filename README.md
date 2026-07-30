@@ -4,7 +4,7 @@
      ============================================================ -->
 
 <!-- ====================== PHASE 1 TERMINAL BANNER ======================
-     SVG, not PNG: the dither dots carry CSS animation. On a 24s loop, 1200 of
+     SVG, not PNG: the dither dots carry CSS animation. On a 11.8s loop, 1200 of
      them detach and run portrait -> "ANKIT RANJAN" -> globe -> portrait, while
      the face dims behind them. The rest drift slowly and continuously.
      An earlier SVG banner had to be reverted to PNG (commit b099a18) because
@@ -16,8 +16,11 @@
      no fade-in, no opacity:0 and no inline transform anywhere in the file, so
      the t=0 frame is already the finished portrait. A renderer that ignores CSS
      (link unfurlers, feed readers, social-card scrapers) shows a correct still
-     rather than an empty panel, and the portrait holds 62% of the cycle so a
+     rather than an empty panel, and the portrait holds 52% of the cycle so a
      visitor glancing for a few seconds sees the face.
+     Pace: flight 0.84s, hold 1.56s. Halved from a 24s loop, at which a visitor
+     who scrolled past the top of the README never saw a transition at all. The
+     hold is the floor — much under ~1.2s assembled and the name stops reading.
      To revert: swap the four .svg below back to .png (both are in assets/).
      ===================================================================== -->
 <picture>
