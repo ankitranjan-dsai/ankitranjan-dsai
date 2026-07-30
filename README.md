@@ -3,11 +3,21 @@
      No external stat APIs → nothing can rate-limit or break.
      ============================================================ -->
 
-<!-- ====================== PHASE 1 TERMINAL BANNER ====================== -->
+<!-- ====================== PHASE 1 TERMINAL BANNER ======================
+     SVG, not PNG: the dither dots carry a slow CSS drift animation.
+     An earlier SVG banner had to be reverted to PNG (commit b099a18) because
+     GitHub's renderer choked on ~8.6k <circle> elements. This build merges
+     horizontal dot runs into 61 <path> elements instead, which is what makes
+     it safe to serve as SVG again.
+     The animation is drift-only by design — there is no fade-in, so the t=0
+     frame is already the finished portrait and a renderer that ignores CSS
+     shows a correct still rather than an empty panel.
+     To revert: swap the four .svg below back to .png (both are in assets/).
+     ===================================================================== -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-light.png" />
-  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.png" alt="Ankit Ranjan — Data Science & AI Engineer · Terminal Profile Banner" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-light.svg" />
+  <img width="100%" src="https://raw.githubusercontent.com/ankitranjan-dsai/ankitranjan-dsai/main/assets/banner-dark.svg" alt="Ankit Ranjan — Data Science & AI Engineer · Terminal Profile Banner" />
 </picture>
 
 <!-- ====================== TYPING ANIMATION (self-hosted) ====================== -->

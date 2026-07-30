@@ -1,0 +1,7 @@
+# Banner build output. scripts/generate_banner.py writes here; only the copies
+# promoted into assets/ are tracked.
+out/
+
+# Python
+__pycache__/
+*.pyc
