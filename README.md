@@ -4,14 +4,20 @@
      ============================================================ -->
 
 <!-- ====================== PHASE 1 TERMINAL BANNER ======================
-     SVG, not PNG: the dither dots carry a slow CSS drift animation.
+     SVG, not PNG: the dither dots carry CSS animation. On a 24s loop, 1200 of
+     them detach and run portrait -> "ANKIT RANJAN" -> globe -> portrait, while
+     the face dims behind them. The rest drift slowly and continuously.
      An earlier SVG banner had to be reverted to PNG (commit b099a18) because
      GitHub's renderer choked on ~8.6k <circle> elements. This build merges
-     horizontal dot runs into 61 <path> elements instead, which is what makes
-     it safe to serve as SVG again.
-     The animation is drift-only by design — there is no fade-in, so the t=0
-     frame is already the finished portrait and a renderer that ignores CSS
-     shows a correct still rather than an empty panel.
+     horizontal dot runs into 61 <path> elements plus 1200 <use> elements —
+     1261 total, ~15% of what broke last time — which is what keeps it safe to
+     serve as SVG.
+     The portrait is the RESTING state, never assembled from nothing: there is
+     no fade-in, no opacity:0 and no inline transform anywhere in the file, so
+     the t=0 frame is already the finished portrait. A renderer that ignores CSS
+     (link unfurlers, feed readers, social-card scrapers) shows a correct still
+     rather than an empty panel, and the portrait holds 62% of the cycle so a
+     visitor glancing for a few seconds sees the face.
      To revert: swap the four .svg below back to .png (both are in assets/).
      ===================================================================== -->
 <picture>

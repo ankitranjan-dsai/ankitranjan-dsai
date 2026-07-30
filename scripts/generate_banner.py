@@ -20,6 +20,9 @@ already animates on this profile's README):
     thickens at once; grouping by spatial region would read as a patch wipe
   * idle — each group drifts on explicit uneven keyTimes, so no group's motion
     lines up with its neighbour's
+  * morph — 1200 of the dots detach and run PORTRAIT -> "ANKIT RANJAN" -> GLOBE
+    -> portrait on a 24s loop, while the face itself dims to 7% for the
+    excursion. The portrait is the resting state and holds 62% of the cycle
 
 The info rows are locked with textLength + lengthAdjust="spacingAndGlyphs" so
 right-aligned values stay on their dotted leaders in any browser font.
@@ -49,6 +52,7 @@ HAIR_LO, HAIR_HI = 34.0, 122.0   # density band the hair is rescaled into
 CONTRAST, SKIN_GAIN = 1.10, 0.86 # tone curve; see the note in dither_mask()
 DOT_HUE = "#79C0FF"
 DOT_RGB = (0x79, 0xC0, 0xFF)
+DOT_LIT = "#D6ECFF"   # travelling dots lift to this while away from the face
 
 # portrait panel geometry (1x coords)
 PX, PY, PW, PH = 36, 92, 400, 492
@@ -174,6 +178,376 @@ def run_buckets(mask, groups=60, seed=7):
     return buckets
 
 
+# ---------------------------------------------------------------- morph
+# A subset of the portrait's dots detaches and runs a three-beat sequence —
+# PORTRAIT, the name "ANKIT RANJAN", a GLOBE — then flies home. Three choices
+# here are load-bearing, not stylistic:
+#
+#  * The portrait is the RESTING state, not something assembled from nothing.
+#    A build-from-empty would make the t=0 frame a blank panel, and README
+#    banners get rasterised at t=0 by link unfurlers, feed readers and
+#    social-card scrapers, none of which run CSS. The running belongs in the
+#    transitions; the still frame has to be the finished picture.
+#  * The portrait holds ~62% of the cycle, and the first 9.6s after load are
+#    pure portrait. Visitors glance for seconds, so the face must be what they
+#    almost certainly see; the sequence is a reward for lingering.
+#  * Both targets are sampled to the SAME count, because one pool of dots forms
+#    both. That constraint is why the name is a 2-cell stroke (1850 cells) and
+#    the globe a 1-cell stroke (1630) — they land within 10% of each other, so
+#    neither has to be violently thinned to match.
+# The beats are a LIST, so the sequence is data rather than a hardcoded pair.
+# Available targets are in TARGETS below; BANNER_BEATS overrides the default,
+# e.g. BANNER_BEATS=name,globe,mono adds the AR monogram as a third beat, and
+# BANNER_BEATS=mono runs the monogram alone. The loop length is derived from the
+# beat count (see morph_timeline) so the portrait keeps its share whatever you
+# pick. BANNER_MORPH=0 falls back to drift-only.
+MORPH = os.environ.get("BANNER_MORPH", "1") != "0"
+BEATS = tuple(b for b in os.environ.get("BANNER_BEATS", "name,globe").split(",")
+              if b)
+MORPH_N = 1200          # travellers, and the count every target samples to
+GW, GH = 22, 34         # glyph box, in grid cells
+GLYPH_CH = 4            # chamfer size — the motif that unifies the letterforms
+NAME_STROKE = 2         # name monoline width, in cells
+GLOBE_STROKE = 1        # globe monoline width, in cells
+NAME_LINES = ("ANKIT", "RANJAN")
+LIVERPOOL = (-3.0, 53.4)   # lon, lat
+
+MONO_W, MONO_H = 152, 108   # AR monogram box, in grid cells
+MONO_T, MONO_B = 5, 102     # cap height within that box
+MONO_CH = 7                 # the monogram's own, larger chamfer
+
+
+def _glyphs():
+    """Monoline letterforms for the glyphs in "ANKIT RANJAN": A N K I T R J.
+
+    Constructed vertex by vertex rather than set in a font, so the banner never
+    depends on the viewer having a particular face installed, and so a repeated
+    45-degree CHAMFER motif can run through every glyph — the N's shoulders,
+    the A's apex, the R's bowl. That one repeated cut is what makes seven
+    hand-built letters look like a single family.
+
+    Monoline rather than filled or outlined: at the panel's real width (~370px
+    in a README) an outlined letter puts two edges within a couple of pixels and
+    turns to mush, and a filled one costs three times the dots.
+    """
+    H, C = GH, GLYPH_CH
+    return {
+        "A": [[(1, H), (9, 3), (13, 3), (21, H)],          # chamfered apex
+              [(5, 23), (17, 23)]],                        # crossbar
+        "N": [[(1, H), (1, C), (1 + C, 0), (21 - C, H), (21, H - C), (21, 0)]],
+        "K": [[(1, 0), (1, H)],
+              [(20, 0), (16, 0), (3, 17)],                 # upper arm
+              [(3, 17), (16, H), (20, H)]],                # lower leg
+        "I": [[(11, 0), (11, H)],
+              [(6, 0), (16, 0)], [(6, H), (16, H)]],       # serifs
+        "T": [[(1, 0), (21, 0)], [(11, 0), (11, H)]],
+        "R": [[(1, H), (1, 0), (15, 0), (20, 5), (20, 12), (15, 17), (1, 17)],
+              [(9, 17), (20, H)]],                         # kicked leg
+        "J": [[(9, 0), (21, 0)],                           # top bar
+              [(15, 0), (15, H - 7), (11, H), (5, H), (1, H - 5)]],
+    }
+
+
+def _plot(d, pts, thick):
+    pts = [(float(x), float(y)) for x, y in pts]
+    if len(pts) > 1:
+        d.line(pts, fill=255, width=thick, joint="curve")
+
+
+def name_mask(lines=NAME_LINES, gap=6, leading=14, thick=NAME_STROKE):
+    """Boolean (ROWS_G, COLS) mask of the name, set as a justified block.
+
+    Two details do the work. First, each glyph advances by its own ink width
+    plus a constant gap: with a fixed 22-cell slot the narrow letters carried
+    11 cells of sidebearing where A carried 7, and "ANKIT" read as "ANK I T".
+    Second, the lines are JUSTIFIED to a common width rather than centred —
+    "ANKIT" is tracked out until it measures the same as "RANJAN", so the two
+    words form a rectangle. Centred words read as typed; a flush block reads as
+    a logotype, which is the difference between a caption and a mark.
+    """
+    G = _glyphs()
+    ink = {ch: (min(p[0] for poly in polys for p in poly),
+                max(p[0] for poly in polys for p in poly))
+           for ch, polys in G.items()}
+    widths = {ln: [ink[c][1] - ink[c][0] for c in ln] for ln in lines}
+    target = max(sum(w) + gap * (len(w) - 1) for w in widths.values())
+    x0 = (COLS - target) // 2
+    y0 = (ROWS_G - (len(lines) * GH + (len(lines) - 1) * leading)) // 2
+    im = Image.new("L", (COLS, ROWS_G), 0)
+    d = ImageDraw.Draw(im)
+    for li, line in enumerate(lines):
+        w = widths[line]
+        track = (target - sum(w)) / max(len(w) - 1, 1)
+        ty, pen = y0 + li * (GH + leading), float(x0)
+        for ch, cw in zip(line, w):
+            tx = pen - ink[ch][0]
+            for poly in G[ch]:
+                _plot(d, [(tx + px, ty + py) for px, py in poly], thick)
+            pen += cw + track
+    return np.asarray(im) > 128
+
+
+def globe_mask(r=62, tilt=0.40, thick=GLOBE_STROKE):
+    """Boolean (ROWS_G, COLS) wireframe globe with a Liverpool marker.
+
+    A bare dot-globe is one of the most overused motifs on dev profiles, so
+    this one is specific to Ankit: it pins Liverpool, where he actually is, and
+    carries a tilted orbit ring that breaks the silhouette out of a plain
+    circle.
+
+    Deliberately sparse — 3 latitudes, 4 longitudes. A denser mesh looked
+    better at full resolution, but the globe and the name share one pool of
+    dots, and a dense globe thinned to the name's count fell apart into
+    confetti.
+    """
+    cx, cy = COLS / 2, ROWS_G / 2
+    im = Image.new("L", (COLS, ROWS_G), 0)
+    d = ImageDraw.Draw(im)
+    t = np.linspace(0, 2 * np.pi, 400)
+
+    def project(lon, lat):
+        """Sphere -> screen, rotated by `tilt` about the screen x-axis."""
+        x = np.cos(lat) * np.sin(lon)
+        y, z = np.sin(lat), np.cos(lat) * np.cos(lon)
+        ys = y * np.cos(tilt) - z * np.sin(tilt)
+        zs = y * np.sin(tilt) + z * np.cos(tilt)
+        return cx + r * x, cy - r * ys, zs        # zs>0 = facing the viewer
+
+    def culled(lon, lat):
+        """Draw a parametric curve, broken wherever it passes behind the globe."""
+        X, Y, Z = project(lon, lat)
+        seg = []
+        for x, y, z in zip(X, Y, Z):
+            if z >= 0:
+                seg.append((x, y))
+            else:
+                _plot(d, seg, thick)
+                seg = []
+        _plot(d, seg, thick)
+
+    _plot(d, zip(cx + r * np.cos(t), cy + r * np.sin(t)), thick)      # limb
+    for lat in np.radians([-38, 0, 38]):
+        culled(t, np.full_like(t, lat))
+    lat_arc = np.linspace(-np.pi / 2, np.pi / 2, 220)
+    for lon in np.radians([-60, -20, 20, 60]):
+        culled(np.full_like(lat_arc, lon), lat_arc)
+
+    a, b = r * 1.34, r * 0.30                                        # orbit
+    ang = np.radians(-18)
+    ex, ey = a * np.cos(t), b * np.sin(t)
+    _plot(d, zip(cx + ex * np.cos(ang) - ey * np.sin(ang),
+                 cy + ex * np.sin(ang) + ey * np.cos(ang)), thick)
+
+    mesh = np.asarray(im) > 128
+
+    # Liverpool. Two failed attempts are worth recording. A crosshair drawn
+    # straight onto the mesh was invisible, because the lat/long lines run right
+    # through it — hence the cleared disc. A leader line and label tick then ran
+    # back OVER the mesh outside that disc and were camouflaged again. So the
+    # whole marker now lives inside the clearance: ring, centre dot, and four
+    # diagonal registration ticks. Self-contained means it always reads.
+    lx, ly, _ = project(np.radians(LIVERPOOL[0]), np.radians(LIVERPOOL[1]))
+    lx, ly = float(lx), float(ly)
+    yy, xx = np.mgrid[0:ROWS_G, 0:COLS]
+    mesh &= ~(np.hypot(xx - lx, yy - ly) < 13)
+
+    pin = Image.new("L", (COLS, ROWS_G), 0)
+    p = ImageDraw.Draw(pin)
+    p.ellipse([lx - 2, ly - 2, lx + 2, ly + 2], fill=255)
+    p.ellipse([lx - 7, ly - 7, lx + 7, ly + 7], outline=255, width=thick)
+    for a in np.radians([45, 135, 225, 315]):
+        ca, sa = np.cos(a), np.sin(a)
+        _plot(p, [(lx + 9 * ca, ly + 9 * sa), (lx + 12 * ca, ly + 12 * sa)],
+              thick)
+    return mesh | (np.asarray(pin) > 128)
+
+
+def monogram_mask():
+    """Boolean (ROWS_G, COLS) mask of an interlocked "AR" monogram, outline only.
+
+    RETAINED BUT NOT IN THE DEFAULT SEQUENCE. This was the first design tried,
+    and it was rejected on looks; the name-and-globe sequence replaced it. It is
+    kept because the letterform construction is reusable and the study cost real
+    iteration — switch it on with BANNER_BEATS=name,globe,mono.
+
+    Two findings from that iteration are worth keeping with the code. An earlier
+    version fused the A's right stroke into the R's stem as a ligature, and at
+    the panel's real width it read as one slab, so the letters are separated and
+    unified by the repeated 45-degree chamfer instead. And a FILLED monogram read
+    as a mushy slab at this dot count, so only the outline is used.
+
+    Note it yields ~1080 cells, fewer than MORPH_N, so including this beat pulls
+    the traveller count down for every beat — they all share one pool of dots.
+    """
+    T, B, C = MONO_T, MONO_B, MONO_CH
+    im = Image.new("L", (MONO_W, MONO_H), 0)
+    d = ImageDraw.Draw(im)
+    for p in (
+        # A — two diagonal bands sharing one flat-chamfered apex, plus a slab
+        # crossbar. The counter is simply the space the two bands leave; cutting
+        # a separate counter polygon made it read as damaged.
+        [(2, B), (16, B), (50, T), (36, T)],
+        [(70, B), (84, B), (50, T), (36, T)],
+        [(22, 68), (64, 68), (64, 80), (22, 80)],
+        # R — stem, chamfered bowl, kicked leg
+        [(92, T), (106, T), (106, B), (92, B)],
+        [(106, T), (130, T), (146, 20), (146, 38), (130, 52), (106, 52)],
+        [(110, 50), (124, 50), (146, B), (132, B)],
+    ):
+        d.polygon(p, fill=255)
+    for p in (
+        [(106, 17), (126, 17), (132, 24), (132, 34), (126, 41), (106, 41)],
+        # the chamfer motif, applied to every remaining square terminal
+        [(2, B - C), (2, B), (2 + C, B)],
+        [(84, B - C), (84, B), (84 - C, B)],
+        [(92, T + C), (92, T), (92 + C, T)],
+        [(92, B - C), (92, B), (92 + C, B)],
+        [(146, B - C), (146, B), (146 - C, B)],
+    ):
+        d.polygon(p, fill=0)
+    solid = np.asarray(im) > 128
+    outline = solid & ~ndimage.binary_erosion(solid, np.ones((3, 3)))
+    out = np.zeros((ROWS_G, COLS), dtype=bool)
+    ox, oy = (COLS - MONO_W) // 2, (ROWS_G - MONO_H) // 2
+    out[oy:oy + MONO_H, ox:ox + MONO_W] = outline
+    return out
+
+
+TARGETS = {"name": name_mask, "globe": globe_mask, "mono": monogram_mask}
+
+
+def _sample(mask, n, seed):
+    """Thin a mask to exactly n cells."""
+    ys, xs = np.nonzero(mask)
+    pts = np.stack([xs, ys], axis=1)
+    if len(pts) <= n:
+        return pts
+    rng = np.random.default_rng(seed)
+    return pts[rng.choice(len(pts), size=n, replace=False)]
+
+
+def _angular_order(pts):
+    """Sort points by angle about their centroid, then radius.
+
+    Pairing all three sets in this order keeps every morph radially coherent —
+    dots sweep outward together instead of crossing into a scribble. Because
+    each set is ranked the same way, src[i], name[i] and globe[i] all hold the
+    same angular rank, so BOTH transitions inherit the coherence, not just the
+    first one.
+    """
+    d = pts - pts.mean(axis=0)
+    return np.lexsort((np.hypot(d[:, 0], d[:, 1]), np.arctan2(d[:, 1], d[:, 0])))
+
+
+def travellers(mask, seed=17):
+    """Pair a sample of portrait dots with each beat's target cells.
+
+    Returns (home, *beat_targets) aligned row-for-row, or None when morphing is
+    switched off. Every set is the same length, because one pool of dots forms
+    all of them: the count is the smallest beat, capped at MORPH_N.
+    """
+    if not (MORPH and BEATS):
+        return None
+    unknown = [b for b in BEATS if b not in TARGETS]
+    if unknown:
+        raise SystemExit(f"unknown beat(s) {unknown}; choose from "
+                         f"{sorted(TARGETS)}")
+    full = [TARGETS[b]() for b in BEATS]
+    ys, xs = np.nonzero(mask)
+    src_all = np.stack([xs, ys], axis=1)
+    n = min([MORPH_N, len(src_all)] + [int(m.sum()) for m in full])
+    rng = np.random.default_rng(seed)
+    src = src_all[rng.choice(len(src_all), size=n, replace=False)]
+    sets = [src] + [_sample(m, n, 101 + i) for i, m in enumerate(full)]
+    return tuple(s[_angular_order(s)] for s in sets)
+
+
+# Timings in SECONDS, from which the percentage stops are derived. Holding these
+# absolute and letting the LOOP LENGTH grow with the beat count is what keeps the
+# portrait's share constant: adding a third beat lengthens the loop to ~34s
+# rather than squeezing the face down to 46% of it.
+FLY_S, HOLD_S = 1.44, 2.40
+REST_FRAC = 0.62       # share of the loop the portrait is at rest
+HEAD_SHARE = 0.65      # of that rest, how much falls BEFORE the first flight,
+                       # so the first impression after load is a long portrait
+MORPH_STAGGER = 0.6    # s; well under one hold, so each beat still settles
+MORPH_LANES = 8        # shared delay classes
+
+
+def morph_timeline(k):
+    """Stops for k beats: (duration_s, out%, [(in%, out%)...], home%)."""
+    excursion = k * (FLY_S + HOLD_S) + FLY_S
+    dur = excursion / (1.0 - REST_FRAC)
+    head = (dur - excursion) * HEAD_SHARE
+    pc, t, beats = lambda s: 100.0 * s / dur, head, []
+    for _ in range(k):
+        t += FLY_S
+        a = t
+        t += HOLD_S
+        beats.append((pc(a), pc(t)))
+    return dur, pc(head), beats, pc(t + FLY_S)
+
+
+def traveller_layer(src, *beats):
+    """One shared keyframe; per-dot deltas ride in CSS custom properties.
+
+    A keyframe per dot would be 1200 rules and megabytes. Instead each beat's
+    delta is a static per-element value substituted into one shared transform,
+    so exact landing positions survive — a quantised delta would blur the
+    letterform, which is the entire point of the layer.
+
+    Three economies keep this affordable at 1200 dots: the deltas are unitless
+    and get their px in the keyframe's calc(), so each value drops two
+    characters; the stagger lives in eight shared lane classes instead of a
+    per-element animation-delay; and the dot itself is a <defs> rect reused by
+    <use>, which is the shortest per-element markup available.
+
+    Degradation is deliberate. A renderer that ignores CSS animation, or that
+    does not support var(), leaves every dot at its home cell — the finished
+    portrait. Nothing here is hidden at t=0: no opacity 0, no inline transform.
+    """
+    ax, ay, cw, ch = cell_geometry()
+    rng = random.Random(23)
+    dur, t_out, holds, t_home = morph_timeline(len(beats))
+    prop = lambda i: chr(ord("a") + i)      # beat i uses --{2i} and --{2i+1}
+
+    def stops(fmt, home, values):
+        s = f"0%,{t_out:.1f}%{{{fmt.format(home)}}}"
+        for (a, b), v in zip(holds, values):
+            s += f"{a:.1f}%,{b:.1f}%{{{fmt.format(v)}}}"
+        return s + f"{t_home:.1f}%,100%{{{fmt.format(home)}}}"
+
+    css = ["@keyframes fly{" + stops("transform:{}", "translate(0,0)", [
+        f"translate(calc(var(--{prop(2 * i)})*1px),"
+        f"calc(var(--{prop(2 * i + 1)})*1px))" for i in range(len(beats))]) + "}"]
+    # The travellers lift to near-white for the whole excursion, including the
+    # crossings between beats. Measured, not guessed: a wireframe in the portrait
+    # hue over the portrait is simply invisible.
+    css.append(f"@keyframes glow{{0%,{t_out:.1f}%{{fill:{DOT_HUE}}}"
+               f"{holds[0][0]:.1f}%,{holds[-1][1]:.1f}%{{fill:{DOT_LIT}}}"
+               f"{t_home:.1f}%,100%{{fill:{DOT_HUE}}}}}")
+    for i in range(MORPH_LANES):
+        delay = MORPH_STAGGER * i / max(MORPH_LANES - 1, 1)
+        css.append(f".s{i}{{animation:"
+                   f"fly {dur:.1f}s cubic-bezier(.5,0,.2,1) {delay:.2f}s infinite,"
+                   f"glow {dur:.1f}s ease-in-out {delay:.2f}s infinite}}")
+
+    out = [f'<defs><rect id="d" width="{cw:.2f}" height="{ch:.2f}"/></defs>',
+           "<style>" + "".join(css) + "</style>",
+           f'<g fill="{DOT_HUE}" shape-rendering="crispEdges">']
+    for i, (sx, sy) in enumerate(src):
+        deltas = "".join(
+            f"--{prop(2 * b)}:{(int(t[i][0]) - int(sx)) * cw:.0f};"
+            f"--{prop(2 * b + 1)}:{(int(t[i][1]) - int(sy)) * ch:.0f};"
+            for b, t in enumerate(beats))
+        out.append(
+            f'<use href="#d" class="s{rng.randrange(MORPH_LANES)}" '
+            f'x="{ax + sx * cw:.1f}" y="{ay + sy * ch:.1f}" '
+            f'style="{deltas[:-1]}"/>')
+    out.append("</g>")
+    return "".join(out)
+
+
 # ---------------------------------------------------------------- animation
 # CSS @keyframes, not SMIL. The contribution-snake SVG already on this profile
 # animates on GitHub using exactly this technique, which makes it the one
@@ -215,7 +589,27 @@ def drift_css():
     return "".join(out)
 
 
-def portrait_group(buckets, animate=True, seed=11):
+# A wireframe laid over an 18%-ink portrait in the same hue is simply invisible
+# — measured, not guessed: the first build of this had the target shape present
+# and unreadable. So the portrait dips almost to black for the whole excursion
+# and comes back after. It stays down across the name-to-globe crossing too;
+# flashing the face back between beats broke the sequence into two unrelated
+# events. One rule on the parent <g> dims all 60 groups at once, and the
+# travelling dots live in a separate <g>, so they keep full opacity.
+MORPH_DIM = 0.07
+
+
+def dim_css(k):
+    dur, t_out, holds, t_home = morph_timeline(k)
+    return (f"@keyframes dim{{0%,{t_out:.1f}%{{opacity:1}}"
+            f"{holds[0][0]:.1f}%,{holds[-1][1]:.1f}%{{opacity:{MORPH_DIM}}}"
+            f"{t_home:.1f}%,100%{{opacity:1}}}}"
+            f".pf{{animation:dim {dur:.1f}s ease-in-out infinite}}")
+
+
+def portrait_group(buckets, animate=True, dim=0, seed=11):
+    """`dim` is the BEAT COUNT (0 = no morph), since the dim keyframe's stops
+    are derived from it."""
     rng = random.Random(seed)
     n = len(buckets)
     css, body = [], []
@@ -237,8 +631,10 @@ def portrait_group(buckets, animate=True, seed=11):
     style = ""
     if animate:
         fi = "@keyframes fi{from{opacity:0}to{opacity:1}}" if INTRO else ""
-        style = "<style>" + fi + drift_css() + "".join(css) + "</style>"
-    return (style + f'<g shape-rendering="crispEdges" fill="{DOT_HUE}">'
+        style = ("<style>" + fi + drift_css() + (dim_css(dim) if dim else "")
+                 + "".join(css) + "</style>")
+    cls = ' class="pf"' if animate and dim else ""
+    return (style + f'<g{cls} shape-rendering="crispEdges" fill="{DOT_HUE}">'
             + "".join(body) + "</g>")
 
 
@@ -293,7 +689,20 @@ def build_svg(theme, path, mask, animate=True):
              f'fill="#7EE787">VISUAL.MAP</text>')
     P.append(f'<text x="{PX+PW-14}" y="{PY+28}" text-anchor="end" font-size="11" '
              f'fill="#5B6470">dither.render</text>')
-    P.append(portrait_group(run_buckets(mask), animate=animate))
+    # Travelling dots are drawn individually so they can each carry their own
+    # deltas, so they must come OUT of the merged-run layer or they'd be drawn
+    # twice. At rest they sit at their home cells, so the portrait is whole and
+    # the traveller count costs the face nothing — only file size.
+    tr = travellers(mask) if animate else None
+    static = mask
+    if tr:
+        src = tr[0]
+        static = mask.copy()
+        static[src[:, 1], src[:, 0]] = False
+    P.append(portrait_group(run_buckets(static), animate=animate,
+                            dim=len(tr) - 1 if tr else 0))
+    if tr:
+        P.append(traveller_layer(*tr))
     P.append(f'<text x="{PX+14}" y="{PY+PH-8}" font-size="10" fill="#5B6470">'
              f'source: github-pic.png &#8212; ok</text>')
 
