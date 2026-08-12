@@ -21,16 +21,40 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      # Shared by both generation attempts below, so the palette lives in one place.
+      SNAKE_OUTPUTS: |
+        dist/github-contribution-grid-snake.svg?color_snake=#1a7f37&color_dots=#ebedf0,#a5d6ff,#58a6ff,#1f6feb,#0969da
+        dist/github-contribution-grid-snake-dark.svg?color_snake=#3fb950&color_dots=#2d3343,#0d419d,#1f6feb,#58a6ff,#a5d6ff
     steps:
+      # snk hits api.github.com/graphql with a bare fetch() — no timeout, no retry —
+      # so a single transient DNS/TCP blip on the runner kills the whole refresh and
+      # the README snake goes stale until the next cron. Hence the second attempt.
       - name: Generate snake SVGs from the contribution grid
+        id: snake
+        continue-on-error: true
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#1a7f37&color_dots=#ebedf0,#a5d6ff,#58a6ff,#1f6feb,#0969da
-            dist/github-contribution-grid-snake-dark.svg?color_snake=#3fb950&color_dots=#2d3343,#0d419d,#1f6feb,#58a6ff,#a5d6ff
+          outputs: ${{ env.SNAKE_OUTPUTS }}
 
+      - name: Wait out the blip
+        if: steps.snake.outcome == 'failure'
+        run: sleep 30
+
+      - name: Retry generation
+        id: snake_retry
+        if: steps.snake.outcome == 'failure'
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: ${{ env.SNAKE_OUTPUTS }}
+
+      # Guard the deploy: this action force-pushes `dist` over the `output` branch,
+      # so running it after a failed generation would replace the live SVGs with
+      # nothing and 404 the README image. Only publish when we actually have files.
       - name: Deploy to output branch
+        if: steps.snake.outcome == 'success' || steps.snake_retry.outcome == 'success'
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
